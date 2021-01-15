@@ -14,6 +14,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @MapperScan("com.springboot.mybatis.orm.dao")
 public class App 
 {
+	
     public static void main( String[] args )
     {
     	ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
