@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		
+	</head>
+
+	<body>
+		<div> ’‚ «  list“≥√Ê </div>
+		<h1>GetOneUser show !</h1>
+	<div id ="div"></div>
+
+</body>
+<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+init();
+function init(){
+	
+	
+ 	$.ajax({
+		type : 'get',
+		url : '/user',
+		//async : false,
+		success : function(data) {
+			alert(JSON.stringify(data));
+			alert(JSON.stringify(data.name));
+			alert(JSON.stringify(data.gender));
+			alert(JSON.stringify(data.gender.code))
+		}
+ 	})
+	
+}
+</script>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.mybatis.orm.dao.TeacherDtoMapper">
+<resultMap id="TeacherDtoMap" type="com.springboot.mybatis.orm.dto.TeacherDto" extends="com.springboot.mybatis.orm.dao.TeacherMapper.BaseResultMap">
+	<collection property="listStu" javaType="ArrayList" ofType="com.springboot.mybatis.orm.model.Student"
+	column="id" select="getStudentByTid"></collection>
+</resultMap>
+<select id="getById" parameterType="Integer" resultMap="TeacherDtoMap">
+
+	select * from teacher where id=#{id}
+</select>
+<select id="getAll"  resultMap="TeacherDtoMap">
+
+	select * from teacher 
+</select>
+<select id="getStudentByTid"  parameterType="Integer" resultMap="com.springboot.mybatis.orm.dao.StudentMapper.BaseResultMap">
+
+	select * from student where t_id=#{id}
+</select>
+</mapper>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.mybatis.orm.dao.PmsDtoMapper">
+<resultMap id="PmsDtoMap" type="com.springboot.mybatis.orm.dto.PmsDto" 
+extends="com.springboot.mybatis.orm.dao.PmsProductMapper.BaseResultMap">
+	
+</resultMap>
+
+<select id="getAll"  resultMap="PmsDtoMap">
+
+	select id,name from pms_product 
+</select>
+<select id="getAll_COUNT" resultType="Long">
+	select count(0) from pms_product
+</select>
+
+</mapper>
